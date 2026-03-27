@@ -1,0 +1,19 @@
+{
+  "name": "sandbox-executor",
+  "version": "1.0.0",
+  "description": "Sandboxed code execution engine for agents",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test tests/executor.test.js",
+    "test:build": "tsc && node --test dist/tests/executor.test.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  }
+}
