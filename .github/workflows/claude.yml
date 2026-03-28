@@ -1,5 +1,6 @@
 name: Claude
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, synchronize]
   issue_comment:
@@ -33,6 +34,7 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ steps.app-token.outputs.token }}
+          allowed_bots: "clawy-app"
           prompt: |
             REPO: ${{ github.repository }}
             PR NUMBER: ${{ github.event.pull_request.number }}
